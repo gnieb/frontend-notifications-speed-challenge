@@ -1,9 +1,13 @@
 import {useState} from 'react'
 import Notification from './Notification'
+import jacob from './assets/images/avatar-jacob-thompson.webp'
+import anna from './assets/images/avatar-anna-kim.webp'
+import angela from "./assets/images/avatar-angela-gray.webp"
+import rizky from "./assets/images/avatar-rizky-hasanuddin.webp"
 
 
 export default function Notifications () {
-    const [notifs, setNotifs] = useState([{ from: "Noah", notification: "sent you a private message", isRead: false,}, {from: "Mom", notification:"commented on a post you're tagged in", isRead: false}, { from: "Jack", notification: "sent you a private message", isRead: false}, { from: "Boss", notification: "sent you a private message", isRead: true}])
+    const [notifs, setNotifs] = useState([{ avatar:jacob, from: "Noah", notification: "sent you a private message", isRead: false, isMessage: true, details:"Hey Babe, How's it going?"}, {avatar:anna, from: "Mom", notification:"commented on a post you're tagged in", isRead: false, isMessage:false, details:"Family Vacay 2023"}, {avatar:rizky, from: "Jack", notification: "sent you a private message", isRead: false, isMessage: true, details: "Can you pick up some Chardonnay for tonight?"}, {avatar:angela, from: "Boss", notification: "sent you a private message", isRead: true, isMessage:true, details:"Can you pick up a shift tomorrow night?"}])
     
     const filterByisRead = (notif) => (notif.isRead == false)
     const filteredByUnread = notifs.filter(filterByisRead)
